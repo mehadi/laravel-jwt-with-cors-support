@@ -1,13 +1,13 @@
 ## Laravel JWT Scaffolding
 
-Laravel (8.x) with JWT out of the box. Just install and start to code your API.
+Laravel (8.x) with JWT with CORS Support out of the box. Just install and start to code your API.
 
 ## Get Started
 
 First clone this repo
 
 ```
-git clone https://github.com/lucascaires/laravel-jwt-scaffolding.git your-project-name
+git clone https://github.com/mehadi/laravel-jwt-with-cors-support
 ```
 
 *Remember to remove .git folder to setup your own git config*
@@ -46,7 +46,7 @@ Now you ready to go!
 |----------|--------------|-------------------------|--------------|
 |POST      | api/login    | AuthController@login    | api          |
 |POST      | api/logout   | AuthController@logout   | api,auth:api |
-|GET       | api/me       | AuthController@me       | api,auth:api |
+|GET       | api/user       | AuthController@user       | api,auth:api |
 |POST      | api/refresh  | AuthController@refresh  | api,auth:api |
 |POST      | api/register | AuthController@register | api          |
 
@@ -57,17 +57,9 @@ You just have to set the middleware to **auth:api**
 For example:
 
 ```php 
-Route::get('/say-hello', function() {
-    return 'Hello my friend!';
+Route::get('/test', function() {
+    return 'Test!';
 })->middleware('auth:api');
-```
-
-# Tests
-
-You can also run the tests to check if everything works!
-
-```
-php artisan test
 ```
 
 
